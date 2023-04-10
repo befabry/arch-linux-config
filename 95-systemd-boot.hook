@@ -1,0 +1,13 @@
+# /etc/pacman.d/hooks/95-systemd-boot.hook
+
+# https://wiki.archlinux.org/title/systemd-boot#pacman_hook 
+
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Gracefully upgrading systemd-boot...
+When = PostTransaction
+Exec = /usr/bin/systemctl restart systemd-boot-update.service
