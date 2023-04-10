@@ -1,1 +1,4 @@
+// What to do
 https://forum.manjaro.org/t/howto-use-wayland-with-proprietary-nvidia-drivers/36130
+// Add suspend 
+https://forum.endeavouros.com/t/enable-wayland-gnome-gdm-with-nvidia-and-make-gestures-suspend-work/31621
