@@ -1,0 +1,14 @@
+# /etc/pacman.d/hooks/99-print-orphans.hook
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Searching for orphaned packages...
+When = PostTransaction
+Exec = /usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found.'"
+#Exec = /usr/bin/bash -c "[[ if $(/usr/bin/pacman -Qtdq) = 0 ]] && /usr/bin/pacman -Rns $(/usr/bin/pacman -Qtdq) || /usr/bin/echo '==> No orphaned packages found.'"
