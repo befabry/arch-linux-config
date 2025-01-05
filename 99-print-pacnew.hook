@@ -1,0 +1,12 @@
+# /etc/pacman.d/hooks/99-print-pacnew.hook
+
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Looking for .pacnew files...
+Exec = /etc/pacman.d/scripts/check-pacnew.sh
+When = PostTransaction
+NeedsTargets
